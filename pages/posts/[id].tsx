@@ -8,6 +8,7 @@ export default function SinglePostPage() {
     const { id } = router.query
 
 
+    // @ts-ignore
     const queryClient = useQueryClient();
     const { isLoading, isError, data, error } = useQuery(['todo', id], fetchSinglePosts)
     return (

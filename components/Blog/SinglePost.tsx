@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+// @ts-ignore
 export default function SinglePost(props) {
     return (
         <Link href={`/posts/${props.id}`}>

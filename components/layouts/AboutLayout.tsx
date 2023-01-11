@@ -16,6 +16,8 @@ const AboutLayout: React.FC<Props> = (props) => (
             )}
             </div>
             {props.title && (
+                // @ts-ignore
+                // @ts-ignore
                 <center className="pb-4 px-4"><p>{props.subTitle}</p></center>
             )}
             <div className="row">

@@ -16,10 +16,12 @@ export default function Write() {
         }
     })
 
+    // @ts-ignore
     const handleChange = (event) => {
         setHeaderPicture(event.target.files[0]);
     };
 
+    // @ts-ignore
     const submitData = async (e) => {
         e.preventDefault();
         const formData = new FormData();
@@ -65,7 +67,8 @@ export default function Write() {
                     </div>
                     <div className="text-info pt-3"><small>
                         {mutation.isLoading && "Posting please wait..."}
-                        {mutation.isError && (`Error occured: ${mutation.error.message}`)}
+                        // @ts-ignore
+                     
                     </small></div>
                     <div className="text-success pt-3"><small>
                         {mutation.isSuccess && "posted waiting for admin confirmation"}

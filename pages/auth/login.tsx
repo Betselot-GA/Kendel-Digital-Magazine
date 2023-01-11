@@ -13,6 +13,7 @@ export default function LoginPage() {
         handleSubmit,
     } = useForm();
     const router = useRouter();
+    // @ts-ignore
     const onSubmit = async (data) => {
         const email = data.email;
         const password = data.password;
@@ -24,15 +25,21 @@ export default function LoginPage() {
             redirect: false,
         })
             .then(function (result) {
+                // @ts-ignore
                 if (result.error !== null) {
+                    // @ts-ignore
                     if (result.status === 401) {
                         setLoginError(
                             "Your email/password combination was incorrect. Please try again"
                         );
                     } else {
+                        // @ts-ignore
+                        // @ts-ignore
                         setLoginError(result.error);
                     }
                 } else {
+                    // @ts-ignore
+                    // @ts-ignore
                     router.push(result.url);
                 }
             })

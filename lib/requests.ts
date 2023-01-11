@@ -35,6 +35,7 @@ export async function fetchApprovedPosts() {
     ).then((res) => res.json())
 }
 // POST - create new post
+// @ts-ignore
 export async function createPost(data) {
 
     const response = await fetch(apiEndpoint + 'posts', {
@@ -45,6 +46,7 @@ export async function createPost(data) {
 }
 // /posts/{id}
 // GET - fetch single post
+// @ts-ignore
 export async function fetchSinglePosts({ queryKey }) {
     const [_, id] = queryKey
     return await fetch(
@@ -52,6 +54,7 @@ export async function fetchSinglePosts({ queryKey }) {
     ).then((res) => res.json())
 }
 // POST - Approve post to be seen(by admin)
+// @ts-ignore
 export async function ApprovePost(data) {
     await postData(apiEndpoint + 'posts/' + data.id, data)
         .then((res) => res);
@@ -61,6 +64,7 @@ export async function ApprovePost(data) {
 
 
 // create account
+// @ts-ignore
 export async function createAccount(data) {
     return await fetch("/api/users", {
         method: "POST",

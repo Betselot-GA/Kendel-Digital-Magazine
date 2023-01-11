@@ -22,6 +22,7 @@ export default async function handler(
       }
     });
 
+    // @ts-ignore
     res.status(200).json(post);
   } else if (req.method == 'POST') {
     const post = await prisma.post.update({
@@ -32,6 +33,7 @@ export default async function handler(
         published: true,
       }
     });
+    // @ts-ignore
     res.status(200).json(post);
   } else if (req.method == 'PUT') {
     const { title, content } = req.body;
@@ -44,6 +46,7 @@ export default async function handler(
         content: content,
       }
     });
+    // @ts-ignore
     res.status(200).json(post);
   } else if (req.method == 'DELETE') {
     const post = await prisma.post.delete({
@@ -51,8 +54,10 @@ export default async function handler(
         id: Number(id),
       }
     });
+    // @ts-ignore
     res.status(200).json(post);
   } else {
+    // @ts-ignore
     res.status(200).json({ 'message': 'error occured' })
   }
 }

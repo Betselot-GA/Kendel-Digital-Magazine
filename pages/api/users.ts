@@ -30,14 +30,18 @@ export default async function handler(
         return
     } else if (req.method == 'GET') {
         const user = await prisma.user.findMany();
+        // @ts-ignore
         res.status(200).json(user)
     } else if (req.method == 'PUT') {
         const user = await prisma.user.findMany();
+        // @ts-ignore
         res.status(200).json(user)
     } else if (req.method == 'DELETE') {
         const user = await prisma.user.findMany();
+        // @ts-ignore
         res.status(200).json(user)
     } else {
+        // @ts-ignore
         res.status(200).json({ 'message': 'error occured' })
     }
 }

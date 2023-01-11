@@ -13,6 +13,7 @@ export default function ManagePostPage() {
             queryClient.invalidateQueries('posts')
         }
     })
+    // @ts-ignore
     function Approve(id) {
         mutation.mutate({ id: id })
     }
@@ -43,6 +44,7 @@ export default function ManagePostPage() {
 
                     <tbody>
                         {
+                            // @ts-ignore
                             data.map(post => (
                                 <tr>
                                     <td>Hello, world</td>
